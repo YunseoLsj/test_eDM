@@ -14,3 +14,6 @@ outlook_render_check=not_available_in_current_environment
 drive_upload_status=blocked_no_create_folder_or_raw_upload_tool
 drive_upload_note=Available Google Drive connector tools can list/fetch files but do not expose result-folder creation or arbitrary raw-file upload in this session.
 browser_render_check=blocked_file_url_policy
+git_push_status=pushed
+raw_url_access_check=blocked_dns_resolution_raw_githubusercontent
+raw_url_access_note=git push succeeded, but local shell and web fetch could not resolve/fetch raw.githubusercontent.com in this environment.
