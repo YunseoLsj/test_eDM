@@ -1,0 +1,43 @@
+{
+  "image_name": "testeDM",
+  "source_file": "testeDM_www.naver.com.png",
+  "source_sha256": "617b93c25cfe8e58a9ee97e0ab1851346db841db6502285cdecaedb78e79a023",
+  "landing_url": "https://www.naver.com",
+  "github_raw_image_base_url": "https://raw.githubusercontent.com/YunseoLsj/test_eDM/main/testeDM/images",
+  "source_path": "testeDM/source.png",
+  "html_path": "testeDM/testeDM.html",
+  "eml_path": "testeDM/testeDM.eml",
+  "images_zip_path": "testeDM/images.zip",
+  "slice_count": 11,
+  "cta_button_slice": "005_cta_button.png",
+  "validation": {
+    "pixel_reconstruction": "exact_match",
+    "html": {
+      "table_based": true,
+      "anchor_count": 1,
+      "linked_image": "005_cta_button.png",
+      "all_image_src_https": true,
+      "banned_patterns_absent": [
+        "map",
+        "area",
+        "script",
+        "absolute overlay",
+        "background-image"
+      ]
+    },
+    "eml": {
+      "crcrlf_count": 0,
+      "parser_defects": [],
+      "content_type": "text/html",
+      "content_transfer_encoding": "quoted-printable",
+      "x_unsent": "1"
+    }
+  },
+  "git": {
+    "image_artifacts_commit": "8c8762c",
+    "image_artifacts_push": "success",
+    "html_eml_commit": "pending",
+    "html_eml_push": "pending"
+  },
+  "processed_at": "2026-06-10T08:21:52.590408+00:00"
+}
