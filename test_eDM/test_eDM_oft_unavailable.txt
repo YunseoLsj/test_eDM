@@ -1,0 +1,11 @@
+OFT was not generated.
+
+Reason:
+- The first generated test_eDM.oft was a minimal CFB/MAPI file and Outlook did not open it reliably.
+- Microsoft Outlook for Mac AppleScript can save the message content, but `save ... as "oft"` produced an HTML document with an .oft extension, not a real Outlook template.
+- Do not deliver a broken .oft file. Use test_eDM.eml as the editable Outlook-compatible draft file, or generate OFT on Windows Outlook using the final HTML.
+
+Recommended Windows OFT path:
+1. Open test_eDM.html in Outlook for Windows as an HTML email body.
+2. Confirm the button-only link behavior.
+3. Save As > Outlook Template (*.oft).

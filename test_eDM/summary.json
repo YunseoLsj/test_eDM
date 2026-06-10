@@ -23,9 +23,9 @@
   "html": "/Users/lsjglobal/Desktop/eDM_test/test_eDM/test_eDM.html",
   "local_html": "/Users/lsjglobal/Desktop/eDM_test/test_eDM/test_eDM_local.html",
   "eml": "/Users/lsjglobal/Desktop/eDM_test/test_eDM/test_eDM.eml",
-  "oft": "/Users/lsjglobal/Desktop/eDM_test/test_eDM/test_eDM.oft",
-  "oft_status": "created",
-  "oft_error": "",
+  "oft": null,
+  "oft_status": "failed_not_uploaded",
+  "oft_error": "Generated CFB OFT did not open reliably; Outlook for Mac save-as-oft produced HTML with .oft extension, not a real Outlook template.",
   "images_zip": "/Users/lsjglobal/Desktop/eDM_test/test_eDM/images.zip",
   "layout_rows": [
     {
@@ -83,10 +83,10 @@
     }
   ],
   "generated_at": "2026-06-10T00:10:50.805849+00:00",
-  "drive_upload_status": "blocked_no_create_folder_or_raw_upload_tool",
-  "drive_result_folder": null,
+  "drive_upload_status": "uploaded_via_google_drive_desktop_and_verified_with_google_drive_plugin",
+  "drive_result_folder": "https://drive.google.com/drive/folders/16r0cVVmPZwQkIVmKxay5gjMsmX-Yaucb",
   "drive_result_folder_check": "not_found_in_parent_1XfU-gfNT7mDUZ3cQQ8krlLyUkaT6dXBC",
-  "drive_upload_note": "Google Drive plugin was used for folder metadata, folder list, file metadata, raw fetch, and result-folder search. The exposed plugin tools in this session do not include Drive folder creation or arbitrary raw-file upload to a parent folder.",
+  "drive_upload_note": "Uploaded through Google Drive Desktop sync folder and verified via Google Drive plugin list_folder.",
   "source_acquisition_status": "restored_from_prior_git_cache_after_plugin_raw_url_blocked_by_local_dns",
   "source_acquisition_note": "Drive plugin raw fetch returned the image payload metadata, but local shell could not resolve the temporary oaiusercontent raw URL. The source used here matches the prior same Drive file ID processing hash 617b93c25cfe8e58a9ee97e0ab1851346db841db6502285cdecaedb78e79a023.",
   "browser_render_check": "blocked_file_url_policy_and_local_server_bind_denied",
@@ -95,9 +95,24 @@
   "pixel_reconstruction": "passed",
   "image_url_accessibility_check": "not_verified_local_dns_and_browser_policy_blocked",
   "outlook_render_check": "not_available_in_current_environment",
-  "eml_check": "created_text_html_message",
-  "oft_check": "created_compound_file_binary_oft",
+  "eml_check": "fixed_valid_emailmessage_policy_smtp_quoted_printable_x_unsent",
+  "oft_check": "not_available_on_mac_generate_on_windows_outlook_only",
   "git_asset_commit": "99a9b18",
   "git_push_status": "pushed_to_origin_main",
-  "image_url_accessibility_note": "git push to origin/main succeeded, but local curl returned 000 due DNS/network restriction and Browser plugin blocked direct raw.githubusercontent.com and github.io navigation by URL policy."
+  "image_url_accessibility_note": "git push to origin/main succeeded, but local curl returned 000 due DNS/network restriction and Browser plugin blocked direct raw.githubusercontent.com and github.io navigation by URL policy.",
+  "eml_crcrlf_count": 0,
+  "oft_unavailable_note": "/Users/lsjglobal/Desktop/eDM_test/test_eDM/test_eDM_oft_unavailable.txt",
+  "drive_result_folder_id": "16r0cVVmPZwQkIVmKxay5gjMsmX-Yaucb",
+  "drive_uploaded_file_count": 9,
+  "drive_uploaded_files": [
+    "test_eDM.html",
+    "test_eDM.eml",
+    "test_eDM_local.html",
+    "source.png",
+    "images.zip",
+    "processing.log",
+    "summary.json",
+    "test_eDM_oft_unavailable.txt",
+    "upload_manifest.txt"
+  ]
 }

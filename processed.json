@@ -1,6 +1,6 @@
 {
   "1hN9r3C1LSF-zs1O--MtrgZz-Df_wMXld": {
-    "status": "local_complete_drive_upload_blocked",
+    "status": "drive_uploaded",
     "slug": "test_eDM",
     "original_name": "test_eDM_www.naver.com.png",
     "drive_file_id": "1hN9r3C1LSF-zs1O--MtrgZz-Df_wMXld",
@@ -8,10 +8,15 @@
     "landing_url": "https://www.naver.com",
     "server_image_base_url": "https://raw.githubusercontent.com/YunseoLsj/test_eDM/main/test_eDM/images",
     "generated_at": "2026-06-10T00:10:50.805849+00:00",
-    "drive_upload_status": "blocked_no_create_folder_or_raw_upload_tool",
+    "drive_upload_status": "uploaded_via_google_drive_desktop_and_verified_with_google_drive_plugin",
     "drive_upload_note": "Google Drive plugin was used for folder metadata, folder list, file metadata, raw fetch, and result-folder search. The exposed plugin tools in this session do not include Drive folder creation or arbitrary raw-file upload to a parent folder.",
     "git_asset_commit": "99a9b18",
     "git_push_status": "pushed_to_origin_main",
-    "image_url_accessibility_check": "not_verified_local_dns_and_browser_policy_blocked"
+    "image_url_accessibility_check": "not_verified_local_dns_and_browser_policy_blocked",
+    "eml_check": "fixed_valid_emailmessage_policy_smtp_quoted_printable_x_unsent",
+    "oft_status": "failed_not_uploaded",
+    "drive_result_folder": "https://drive.google.com/drive/folders/16r0cVVmPZwQkIVmKxay5gjMsmX-Yaucb",
+    "drive_result_folder_id": "16r0cVVmPZwQkIVmKxay5gjMsmX-Yaucb",
+    "drive_uploaded_file_count": 9
   }
 }

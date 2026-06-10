@@ -1,47 +1,87 @@
-From: eDM Automation <no-reply@example.com>
-To: Recipient <recipient@example.com>
-Subject: test_eDM
-Date: Wed, 10 Jun 2026 00:10:49 +0000
-MIME-Version: 1.0
-Content-Type: text/html; charset="UTF-8"
-Content-Transfer-Encoding: 8bit
-
+From: eDM Automation <no-reply@example.com>
+To: Recipient <recipient@example.com>
+Subject: test_eDM
+Date: Wed, 10 Jun 2026 00:22:42 +0000
+Message-ID: <178105096219.46233.17564666257942377175@local.edm>
+X-Unsent: 1
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
 <!doctype html>
-<html lang="ko">
+<html lang=3D"ko">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset=3D"utf-8">
+  <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D1">
   <title>test_eDM</title>
 </head>
-<body style="margin:0; padding:0; background-color:#ffffff;">
-  <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="700" align="center" style="width:700px; border-collapse:collapse; border-spacing:0; mso-table-lspace:0pt; mso-table-rspace:0pt;">
+<body style=3D"margin:0; padding:0; background-color:#ffffff;">
+  <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" width=3D"700" align=3D"center" style=3D"width:700px; border-collapse:colla=
+pse; border-spacing:0; mso-table-lspace:0pt; mso-table-rspace:0pt;">
     <tr>
-      <td style="padding:0; margin:0; font-size:0; line-height:0; mso-line-height-rule:exactly;"><img src="https://raw.githubusercontent.com/YunseoLsj/test_eDM/main/test_eDM/images/img_01.png" width="700" height="1000" alt="" style="display:block; border:0; outline:none; text-decoration:none; line-height:0; -ms-interpolation-mode:bicubic;"></td>
+      <td style=3D"padding:0; margin:0; font-size:0; line-height:0; mso-line-=
+height-rule:exactly;"><img src=3D"https://raw.githubusercontent.com/YunseoLsj=
+/test_eDM/main/test_eDM/images/img_01.png" width=3D"700" height=3D"1000" alt=
+=3D"" style=3D"display:block; border:0; outline:none; text-decoration:none; l=
+ine-height:0; -ms-interpolation-mode:bicubic;"></td>
     </tr>
     <tr>
-      <td style="padding:0; margin:0; font-size:0; line-height:0; mso-line-height-rule:exactly;"><img src="https://raw.githubusercontent.com/YunseoLsj/test_eDM/main/test_eDM/images/img_02.png" width="700" height="208" alt="" style="display:block; border:0; outline:none; text-decoration:none; line-height:0; -ms-interpolation-mode:bicubic;"></td>
+      <td style=3D"padding:0; margin:0; font-size:0; line-height:0; mso-line-=
+height-rule:exactly;"><img src=3D"https://raw.githubusercontent.com/YunseoLsj=
+/test_eDM/main/test_eDM/images/img_02.png" width=3D"700" height=3D"208" alt=
+=3D"" style=3D"display:block; border:0; outline:none; text-decoration:none; l=
+ine-height:0; -ms-interpolation-mode:bicubic;"></td>
     </tr>
     <tr>
-      <td style="padding:0; margin:0; font-size:0; line-height:0; mso-line-height-rule:exactly;">
-        <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="700" style="width:700px; border-collapse:collapse; border-spacing:0; mso-table-lspace:0pt; mso-table-rspace:0pt;">
+      <td style=3D"padding:0; margin:0; font-size:0; line-height:0; mso-line-=
+height-rule:exactly;">
+        <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"prese=
+ntation" width=3D"700" style=3D"width:700px; border-collapse:collapse; border=
+-spacing:0; mso-table-lspace:0pt; mso-table-rspace:0pt;">
           <tr>
-            <td width="234" style="padding:0; margin:0; font-size:0; line-height:0; mso-line-height-rule:exactly;"><img src="https://raw.githubusercontent.com/YunseoLsj/test_eDM/main/test_eDM/images/cta_left.png" width="234" height="83" alt="" style="display:block; border:0; outline:none; text-decoration:none; line-height:0; -ms-interpolation-mode:bicubic;"></td>
-            <td width="233" style="padding:0; margin:0; font-size:0; line-height:0; mso-line-height-rule:exactly;"><a href="https://www.naver.com" target="_blank" style="border:0; text-decoration:none; display:block; line-height:0; font-size:0;"><img src="https://raw.githubusercontent.com/YunseoLsj/test_eDM/main/test_eDM/images/cta_button.png" width="233" height="83" alt="CTA" style="display:block; border:0; outline:none; text-decoration:none; line-height:0; -ms-interpolation-mode:bicubic;"></a></td>
-            <td width="233" style="padding:0; margin:0; font-size:0; line-height:0; mso-line-height-rule:exactly;"><img src="https://raw.githubusercontent.com/YunseoLsj/test_eDM/main/test_eDM/images/cta_right.png" width="233" height="83" alt="" style="display:block; border:0; outline:none; text-decoration:none; line-height:0; -ms-interpolation-mode:bicubic;"></td>
+            <td width=3D"234" style=3D"padding:0; margin:0; font-size:0; line=
+-height:0; mso-line-height-rule:exactly;"><img src=3D"https://raw.githubuserc=
+ontent.com/YunseoLsj/test_eDM/main/test_eDM/images/cta_left.png" width=3D"234=
+" height=3D"83" alt=3D"" style=3D"display:block; border:0; outline:none; text=
+-decoration:none; line-height:0; -ms-interpolation-mode:bicubic;"></td>
+            <td width=3D"233" style=3D"padding:0; margin:0; font-size:0; line=
+-height:0; mso-line-height-rule:exactly;"><a href=3D"https://www.naver.com" t=
+arget=3D"_blank" style=3D"border:0; text-decoration:none; display:block; line=
+-height:0; font-size:0;"><img src=3D"https://raw.githubusercontent.com/Yunseo=
+Lsj/test_eDM/main/test_eDM/images/cta_button.png" width=3D"233" height=3D"83"=
+ alt=3D"CTA" style=3D"display:block; border:0; outline:none; text-decoration:=
+none; line-height:0; -ms-interpolation-mode:bicubic;"></a></td>
+            <td width=3D"233" style=3D"padding:0; margin:0; font-size:0; line=
+-height:0; mso-line-height-rule:exactly;"><img src=3D"https://raw.githubuserc=
+ontent.com/YunseoLsj/test_eDM/main/test_eDM/images/cta_right.png" width=3D"23=
+3" height=3D"83" alt=3D"" style=3D"display:block; border:0; outline:none; tex=
+t-decoration:none; line-height:0; -ms-interpolation-mode:bicubic;"></td>
           </tr>
         </table>
       </td>
     </tr>
     <tr>
-      <td style="padding:0; margin:0; font-size:0; line-height:0; mso-line-height-rule:exactly;"><img src="https://raw.githubusercontent.com/YunseoLsj/test_eDM/main/test_eDM/images/img_03.png" width="700" height="1000" alt="" style="display:block; border:0; outline:none; text-decoration:none; line-height:0; -ms-interpolation-mode:bicubic;"></td>
+      <td style=3D"padding:0; margin:0; font-size:0; line-height:0; mso-line-=
+height-rule:exactly;"><img src=3D"https://raw.githubusercontent.com/YunseoLsj=
+/test_eDM/main/test_eDM/images/img_03.png" width=3D"700" height=3D"1000" alt=
+=3D"" style=3D"display:block; border:0; outline:none; text-decoration:none; l=
+ine-height:0; -ms-interpolation-mode:bicubic;"></td>
     </tr>
     <tr>
-      <td style="padding:0; margin:0; font-size:0; line-height:0; mso-line-height-rule:exactly;"><img src="https://raw.githubusercontent.com/YunseoLsj/test_eDM/main/test_eDM/images/img_04.png" width="700" height="1000" alt="" style="display:block; border:0; outline:none; text-decoration:none; line-height:0; -ms-interpolation-mode:bicubic;"></td>
+      <td style=3D"padding:0; margin:0; font-size:0; line-height:0; mso-line-=
+height-rule:exactly;"><img src=3D"https://raw.githubusercontent.com/YunseoLsj=
+/test_eDM/main/test_eDM/images/img_04.png" width=3D"700" height=3D"1000" alt=
+=3D"" style=3D"display:block; border:0; outline:none; text-decoration:none; l=
+ine-height:0; -ms-interpolation-mode:bicubic;"></td>
     </tr>
     <tr>
-      <td style="padding:0; margin:0; font-size:0; line-height:0; mso-line-height-rule:exactly;"><img src="https://raw.githubusercontent.com/YunseoLsj/test_eDM/main/test_eDM/images/img_05.png" width="700" height="44" alt="" style="display:block; border:0; outline:none; text-decoration:none; line-height:0; -ms-interpolation-mode:bicubic;"></td>
+      <td style=3D"padding:0; margin:0; font-size:0; line-height:0; mso-line-=
+height-rule:exactly;"><img src=3D"https://raw.githubusercontent.com/YunseoLsj=
+/test_eDM/main/test_eDM/images/img_05.png" width=3D"700" height=3D"44" alt=3D=
+"" style=3D"display:block; border:0; outline:none; text-decoration:none; line=
+-height:0; -ms-interpolation-mode:bicubic;"></td>
     </tr>
   </table>
 </body>
 </html>
-
