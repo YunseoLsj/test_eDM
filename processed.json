@@ -30,8 +30,9 @@
     "git": {
       "image_artifacts_commit": "8c8762c",
       "image_artifacts_push": "success",
-      "html_eml_commit": "pending",
-      "html_eml_push": "pending"
+      "html_eml_commit": "256b964",
+      "html_eml_push": "success",
+      "completion_recorded_at": "2026-06-10T08:22:56.023962+00:00"
     },
     "validation": {
       "pixel_reconstruction": "exact_match",
