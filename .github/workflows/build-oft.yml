@@ -1,0 +1,232 @@
+name: Build Outlook templates
+
+on:
+  push:
+    paths:
+      - "**/*.html"
+      - "**/*.htm"
+      - "**/*.png"
+      - "**/*.jpg"
+      - "**/*.jpeg"
+      - "**/*.gif"
+      - "**/*.webp"
+      - "**/*.svg"
+      - "!.github/**"
+      - "!**/*_oft_build.html"
+  workflow_dispatch:
+    inputs:
+      folder:
+        description: "Folder to process. Leave empty to scan every folder that contains HTML."
+        required: false
+        type: string
+      commit_outputs:
+        description: "Commit generated .oft files back to the current branch."
+        required: false
+        default: true
+        type: boolean
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-oft-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build-oft:
+    name: Build .oft from uploaded HTML folders
+    runs-on: [self-hosted, Windows, outlook]
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ github.ref_name }}
+
+      - name: Determine target folders
+        id: targets
+        shell: powershell
+        run: |
+          $ErrorActionPreference = "Stop"
+          $folders = New-Object "System.Collections.Generic.List[string]"
+          $manualFolder = "${{ github.event.inputs.folder }}"
+          $scanAllFolders = $false
+
+          function Test-DirectoryHasHtml {
+            param([string]$Directory)
+
+            if ([string]::IsNullOrWhiteSpace($Directory)) {
+              $Directory = "."
+            }
+            if (-not (Test-Path -LiteralPath $Directory -PathType Container)) {
+              return $false
+            }
+
+            $htmlFiles = @(Get-ChildItem -LiteralPath $Directory -File | Where-Object { $_.Extension -match "^\.html?$" })
+            return $htmlFiles.Count -gt 0
+          }
+
+          function Find-NearestHtmlFolder {
+            param([string]$ChangedPath)
+
+            $dir = Split-Path -Path $ChangedPath -Parent
+            if ([string]::IsNullOrWhiteSpace($dir)) {
+              $dir = "."
+            }
+
+            while (-not [string]::IsNullOrWhiteSpace($dir)) {
+              $normalized = $dir.Replace("\", "/")
+              if (Test-DirectoryHasHtml -Directory $normalized) {
+                return $normalized
+              }
+              if ($normalized -eq ".") {
+                return $null
+              }
+              $dir = Split-Path -Path $normalized -Parent
+              if ([string]::IsNullOrWhiteSpace($dir)) {
+                $dir = "."
+              }
+            }
+
+            return $null
+          }
+
+          if ("${{ github.event_name }}" -eq "workflow_dispatch") {
+            if (-not [string]::IsNullOrWhiteSpace($manualFolder)) {
+              $folders.Add($manualFolder.Trim().Trim("/").Trim("\"))
+            } else {
+              $scanAllFolders = $true
+            }
+          } else {
+            $before = "${{ github.event.before }}"
+            $after = "${{ github.sha }}"
+
+            if ([string]::IsNullOrWhiteSpace($before) -or $before -match "^0+$") {
+              $changed = git diff-tree --no-commit-id --name-only -r $after
+            } else {
+              $changed = git diff --name-only $before $after
+            }
+
+            foreach ($path in $changed) {
+              if ($path -match "\.html?$" -and $path -notmatch "^\.github/") {
+                $dir = Split-Path -Path $path -Parent
+                if ([string]::IsNullOrWhiteSpace($dir)) {
+                  $dir = "."
+                }
+                $folders.Add($dir.Replace("\", "/"))
+              } elseif ($path -match "\.(png|jpe?g|gif|webp|svg)$" -and $path -notmatch "^\.github/") {
+                $htmlFolder = Find-NearestHtmlFolder -ChangedPath $path
+                if (-not [string]::IsNullOrWhiteSpace($htmlFolder)) {
+                  $folders.Add($htmlFolder)
+                }
+              }
+            }
+          }
+
+          if ($scanAllFolders) {
+            Get-ChildItem -Path . -Directory | ForEach-Object {
+              $htmlFiles = @(Get-ChildItem -LiteralPath $_.FullName -File -Recurse | Where-Object { $_.Extension -match "^\.html?$" })
+              if ($htmlFiles.Count -gt 0) {
+                $folders.Add($_.Name)
+              }
+            }
+          }
+
+          $uniqueFolders = @($folders | Where-Object { -not [string]::IsNullOrWhiteSpace($_) -and (Test-Path -LiteralPath $_ -PathType Container) } | Sort-Object -Unique)
+          if ($uniqueFolders.Count -eq 0) {
+            throw "No HTML folders were found to process."
+          }
+
+          "folders<<EOF" | Out-File -FilePath $env:GITHUB_OUTPUT -Encoding utf8 -Append
+          $uniqueFolders | Out-File -FilePath $env:GITHUB_OUTPUT -Encoding utf8 -Append
+          "EOF" | Out-File -FilePath $env:GITHUB_OUTPUT -Encoding utf8 -Append
+
+          Write-Host "Target folders:"
+          $uniqueFolders | ForEach-Object { Write-Host " - $_" }
+
+      - name: Convert HTML to OFT with Outlook
+        id: build
+        shell: powershell
+        run: |
+          $ErrorActionPreference = "Stop"
+          $folders = @'
+          ${{ steps.targets.outputs.folders }}
+          '@ -split "\r?\n" | Where-Object { -not [string]::IsNullOrWhiteSpace($_) } | ForEach-Object { $_.Trim() }
+          $generated = @()
+
+          foreach ($folder in $folders) {
+            Write-Host "Building OFT files in $folder"
+            & .\scripts\build-oft.ps1 `
+              -Folder $folder `
+              -Repository "${{ github.repository }}" `
+              -RefName "${{ github.ref_name }}" `
+              -CommitSha "${{ github.sha }}" `
+              -RewriteRelativeImageSources
+
+            $generated += Get-ChildItem -LiteralPath $folder -File -Recurse | Where-Object {
+              $_.Name -like "*.oft" -or $_.Name -like "*_oft_build.json"
+            } | ForEach-Object { $_.FullName }
+          }
+
+          $generated = @($generated | Sort-Object -Unique)
+          if ($generated.Count -eq 0) {
+            throw "No OFT outputs were generated."
+          }
+
+          "generated<<EOF" | Out-File -FilePath $env:GITHUB_OUTPUT -Encoding utf8 -Append
+          $generated | Out-File -FilePath $env:GITHUB_OUTPUT -Encoding utf8 -Append
+          "EOF" | Out-File -FilePath $env:GITHUB_OUTPUT -Encoding utf8 -Append
+
+      - name: Upload OFT build artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: oft-build-${{ github.run_id }}
+          path: |
+            **/*.oft
+            **/*_oft_build.json
+          if-no-files-found: warn
+
+      - name: Commit generated OFT files
+        if: github.event_name == 'push' || github.event.inputs.commit_outputs == 'true'
+        shell: powershell
+        run: |
+          $ErrorActionPreference = "Stop"
+          $paths = @'
+          ${{ steps.build.outputs.generated }}
+          '@ -split "\r?\n" | Where-Object { -not [string]::IsNullOrWhiteSpace($_) } | ForEach-Object { $_.Trim() }
+
+          if ($paths.Count -eq 0) {
+            Write-Host "No generated paths to commit."
+            exit 0
+          }
+
+          $relativePaths = @()
+          foreach ($path in $paths) {
+            if (Test-Path -LiteralPath $path -PathType Leaf) {
+              $relativePaths += (Resolve-Path -LiteralPath $path -Relative).Replace("\", "/")
+            }
+          }
+
+          if ($relativePaths.Count -eq 0) {
+            Write-Host "No generated files exist on disk."
+            exit 0
+          }
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- $relativePaths
+
+          git diff --cached --quiet
+          $diffExit = $LASTEXITCODE
+          if ($diffExit -eq 0) {
+            Write-Host "No generated OFT changes to commit."
+            exit 0
+          }
+          if ($diffExit -ne 1) {
+            exit $diffExit
+          }
+
+          git commit -m "Generate Outlook templates [skip ci]"
+          git push origin HEAD:${{ github.ref_name }}
