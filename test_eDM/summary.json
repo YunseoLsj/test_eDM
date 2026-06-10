@@ -1,0 +1,100 @@
+{
+  "slug": "test_eDM",
+  "original_name": "test_eDM_www.naver.com.png",
+  "drive_file_id": "1hN9r3C1LSF-zs1O--MtrgZz-Df_wMXld",
+  "source": "/Users/lsjglobal/Desktop/eDM_test/test_eDM/source.png",
+  "source_sha256": "617b93c25cfe8e58a9ee97e0ab1851346db841db6502285cdecaedb78e79a023",
+  "width": 700,
+  "height": 3335,
+  "landing_url": "https://www.naver.com",
+  "cta_detected_bbox": [
+    237,
+    1215,
+    463,
+    1263
+  ],
+  "cta_slice": {
+    "x0": 234,
+    "x1": 467,
+    "y0": 1208,
+    "y1": 1291
+  },
+  "server_image_base_url": "https://raw.githubusercontent.com/YunseoLsj/test_eDM/main/test_eDM/images",
+  "html": "/Users/lsjglobal/Desktop/eDM_test/test_eDM/test_eDM.html",
+  "local_html": "/Users/lsjglobal/Desktop/eDM_test/test_eDM/test_eDM_local.html",
+  "eml": "/Users/lsjglobal/Desktop/eDM_test/test_eDM/test_eDM.eml",
+  "oft": "/Users/lsjglobal/Desktop/eDM_test/test_eDM/test_eDM.oft",
+  "oft_status": "created",
+  "oft_error": "",
+  "images_zip": "/Users/lsjglobal/Desktop/eDM_test/test_eDM/images.zip",
+  "layout_rows": [
+    {
+      "type": "image",
+      "file": "img_01.png",
+      "height": 1000,
+      "y0": 0,
+      "y1": 1000
+    },
+    {
+      "type": "image",
+      "file": "img_02.png",
+      "height": 208,
+      "y0": 1000,
+      "y1": 1208
+    },
+    {
+      "type": "cta",
+      "height": 83,
+      "y0": 1208,
+      "y1": 1291,
+      "left": {
+        "file": "cta_left.png",
+        "width": 234
+      },
+      "button": {
+        "file": "cta_button.png",
+        "width": 233
+      },
+      "right": {
+        "file": "cta_right.png",
+        "width": 233
+      }
+    },
+    {
+      "type": "image",
+      "file": "img_03.png",
+      "height": 1000,
+      "y0": 1291,
+      "y1": 2291
+    },
+    {
+      "type": "image",
+      "file": "img_04.png",
+      "height": 1000,
+      "y0": 2291,
+      "y1": 3291
+    },
+    {
+      "type": "image",
+      "file": "img_05.png",
+      "height": 44,
+      "y0": 3291,
+      "y1": 3335
+    }
+  ],
+  "generated_at": "2026-06-10T00:10:50.805849+00:00",
+  "drive_upload_status": "blocked_no_create_folder_or_raw_upload_tool",
+  "drive_result_folder": null,
+  "drive_result_folder_check": "not_found_in_parent_1XfU-gfNT7mDUZ3cQQ8krlLyUkaT6dXBC",
+  "drive_upload_note": "Google Drive plugin was used for folder metadata, folder list, file metadata, raw fetch, and result-folder search. The exposed plugin tools in this session do not include Drive folder creation or arbitrary raw-file upload to a parent folder.",
+  "source_acquisition_status": "restored_from_prior_git_cache_after_plugin_raw_url_blocked_by_local_dns",
+  "source_acquisition_note": "Drive plugin raw fetch returned the image payload metadata, but local shell could not resolve the temporary oaiusercontent raw URL. The source used here matches the prior same Drive file ID processing hash 617b93c25cfe8e58a9ee97e0ab1851346db841db6502285cdecaedb78e79a023.",
+  "browser_render_check": "blocked_file_url_policy_and_local_server_bind_denied",
+  "browser_render_note": "Browser plugin blocked file:// navigation; local 127.0.0.1 preview server failed with PermissionError [Errno 1] Operation not permitted.",
+  "html_validation": "passed",
+  "pixel_reconstruction": "passed",
+  "image_url_accessibility_check": "deferred_until_commit_push_raw_urls_exist",
+  "outlook_render_check": "not_available_in_current_environment",
+  "eml_check": "created_text_html_message",
+  "oft_check": "created_compound_file_binary_oft"
+}
