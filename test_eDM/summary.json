@@ -93,8 +93,11 @@
   "browser_render_note": "Browser plugin blocked file:// navigation; local 127.0.0.1 preview server failed with PermissionError [Errno 1] Operation not permitted.",
   "html_validation": "passed",
   "pixel_reconstruction": "passed",
-  "image_url_accessibility_check": "deferred_until_commit_push_raw_urls_exist",
+  "image_url_accessibility_check": "not_verified_local_dns_and_browser_policy_blocked",
   "outlook_render_check": "not_available_in_current_environment",
   "eml_check": "created_text_html_message",
-  "oft_check": "created_compound_file_binary_oft"
+  "oft_check": "created_compound_file_binary_oft",
+  "git_asset_commit": "99a9b18",
+  "git_push_status": "pushed_to_origin_main",
+  "image_url_accessibility_note": "git push to origin/main succeeded, but local curl returned 000 due DNS/network restriction and Browser plugin blocked direct raw.githubusercontent.com and github.io navigation by URL policy."
 }
