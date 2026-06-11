@@ -11,7 +11,25 @@
     "summary_path": "0612 test/summary.json",
     "html_path": "0612 test/0612 test.html",
     "eml_path": "0612 test/0612 test.eml",
-    "validation_overall_ok": true
+    "validation_overall_ok": true,
+    "artifact_commit_push": {
+      "commit": "cd17692",
+      "message": "feat: add eDM outputs for 0612 test and F5 Eteverse eDM",
+      "push": "pushed to origin/main (cf44005..cd17692)"
+    },
+    "final_pull_after_2_min": {
+      "time": "2026-06-12T08:40:10+09:00",
+      "command": "git pull --rebase origin main after 2 minute wait",
+      "result": "fast-forward from cd17692 to 72616db",
+      "remote_commit": "72616db Generate Outlook templates [skip ci]",
+      "added_files": [
+        "0612 test/0612 test.oft",
+        "0612 test/0612 test_oft_build.json",
+        "F5 Eteverse eDM/F5 Eteverse eDM.oft",
+        "F5 Eteverse eDM/F5 Eteverse eDM_oft_build.json"
+      ],
+      "conflicts": "none"
+    }
   },
   "F5 Eteverse eDM": {
     "image_name": "F5 Eteverse eDM",
@@ -25,6 +43,24 @@
     "summary_path": "F5 Eteverse eDM/summary.json",
     "html_path": "F5 Eteverse eDM/F5 Eteverse eDM.html",
     "eml_path": "F5 Eteverse eDM/F5 Eteverse eDM.eml",
-    "validation_overall_ok": true
+    "validation_overall_ok": true,
+    "artifact_commit_push": {
+      "commit": "cd17692",
+      "message": "feat: add eDM outputs for 0612 test and F5 Eteverse eDM",
+      "push": "pushed to origin/main (cf44005..cd17692)"
+    },
+    "final_pull_after_2_min": {
+      "time": "2026-06-12T08:40:10+09:00",
+      "command": "git pull --rebase origin main after 2 minute wait",
+      "result": "fast-forward from cd17692 to 72616db",
+      "remote_commit": "72616db Generate Outlook templates [skip ci]",
+      "added_files": [
+        "0612 test/0612 test.oft",
+        "0612 test/0612 test_oft_build.json",
+        "F5 Eteverse eDM/F5 Eteverse eDM.oft",
+        "F5 Eteverse eDM/F5 Eteverse eDM_oft_build.json"
+      ],
+      "conflicts": "none"
+    }
   }
 }
